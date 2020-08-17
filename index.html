@@ -9,10 +9,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
         
         <!-- Font awesome -->
-        <link rel="stylesheet" href="../../fontawesome/css/all.css">
+        <link rel="stylesheet" href="../fontawesome/css/all.css">
 
         <!-- Google Fonts-->
         <link href="https://fonts.googleapis.com/css2?family=&display=swap" rel="stylesheet">
@@ -27,17 +27,63 @@
         
         <link rel="manifest" href="site.webmanifest">
 
-        <title></title>
+        <title>Password Generator</title>
     </head>
-    <body class="bg">
-        
+    <body>
+        <div class="container-sm">
+            <!-- Title -->
+            <div id="title">
+                <h1>Password Generator</h1>
+                <hr>
+            </div>
 
+            <!-- Password -->
+            <div id="password">
+                <!-- Dynamically created password -->
+            </div>
+            
+            <!-- Buttons -->
+            <div id="buttons">
+                <button type="button" class="btn btn-danger"><i id="icon" class="fas fa-exclamation-triangle"></i><span id="strength">Weak</span> password</button>
+                <button type="button" id="refresh" class="btn btn-success"><i class="fas fa-redo-alt"></i>Refresh</button>
+                <button type="button" id="copy" class="btn btn-primary"><i class="fas fa-copy"></i>Copy Password</button>
+            </div>
+
+            <!-- Slider -->
+            <div id="slidecontainer">
+                <p>Use the slider, and select from the options, below, 
+                to lengthen your password and strengthen your security.</p>
+                
+                <label for="rangeSlider">Password Length (4 - 48) :&nbsp;<span id="length"></span></label>
+                <input type="range" id="rangeSlider" class="custom-range" min="1" max="48" value="20">
+            </div>
+
+            <!-- Checkboxes -->
+            <div id="checkboxes">
+                <div class="custom-control custom-checkbox custom-control-inline">
+                    <input type="checkbox" class="custom-control-input" id="letters">
+                    <label class="custom-control-label" for="letters">Letters</label>
+                </div>
+                <div class="custom-control custom-checkbox custom-control-inline">
+                    <input type="checkbox" class="custom-control-input" id="mixed">
+                    <label class="custom-control-label" for="mixed">Mixed Case</label>
+                </div>
+                <div class="custom-control custom-checkbox custom-control-inline">
+                    <input type="checkbox" class="custom-control-input" id="punctuation">
+                    <label class="custom-control-label" for="punctuation">Punctuation</label>
+                </div>
+                <div class="custom-control custom-checkbox custom-control-inline">
+                    <input type="checkbox" class="custom-control-input" id="numbers">
+                    <label class="custom-control-label" for="numbers">Numbers</label>
+                </div>
+            </div>
+        </div> <!-- End of conatiner -->
 
     <!-- Bootstrap JavaScript -->
     <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="../../jQuery/jquery-3.5.1.min.js"></script>
-    <script src="../../bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery first, then Bootstrap JS -->
+    <script src="../jQuery/jquery-3.5.1.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
     
     </body>
 </html>
