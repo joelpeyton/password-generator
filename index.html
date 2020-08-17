@@ -39,12 +39,11 @@
             <!-- Password -->
             <div id="password">
                 <!-- Dynamically created password -->
-                asdfghiknmb;lfkb;
             </div>
             
             <!-- Buttons -->
             <div id="buttons" class="mb-3">
-                <button type="button" class="btn btn-success mb-1"><i id="icon" class="fas fa-exclamation-triangle pr-2"></i><span id="strength">Weak</span> password</button>
+                <button type="button" id="strength" class=""><i id="icon" class="fas fa-exclamation-triangle pr-2"></i><span id="strengthText"></span>Password</button>
                 <button type="button" id="refresh" class="btn btn-info mb-1"><i class="fas fa-redo-alt pr-2"></i>Refresh</button>
                 <button type="button" id="copy" class="btn btn-primary mb-1"><i class="fas fa-copy pr-2"></i>Copy Password</button>
             </div>
@@ -61,7 +60,7 @@
             <!-- Checkboxes -->
             <div id="checkboxes">
                 <div class="custom-control custom-checkbox custom-control-inline">
-                    <input type="checkbox" class="custom-control-input" sid="letter">
+                    <input type="checkbox" class="custom-control-input" id="letters">
                     <label class="custom-control-label" for="letters">Letters</label>
                 </div>
                 <div class="custom-control custom-checkbox custom-control-inline">
@@ -84,6 +83,8 @@
     <!-- jQuery first, then Bootstrap JS -->
     <script src="../jQuery/jquery-3.5.1.min.js"></script>
     <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="./scripts/main.js"></script>
     
     </body>
 </html>
