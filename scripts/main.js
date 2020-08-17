@@ -59,12 +59,12 @@ function getArray() {
 function changeStrength(value) {
 	let btnClass, text, iconClass, color;
 	if (value < 1e+24) {
-        btnClass = "btn btn-danger mb-1";
+        btnClass = "btn btn-danger mb-1 disabled";
         text = "Bad ";
         iconClass = "fas fa-exclamation-triangle pr-2";
         color = "#c0392b";
 	} else {
-		btnClass = "btn btn-success mb-1";
+		btnClass = "btn btn-success mb-1 disabled";
 		text = "Good ";
         iconClass = "fas fa-check-circle pr-2";
         color = "#27ae60";

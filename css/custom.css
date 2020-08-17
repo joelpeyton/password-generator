@@ -10,6 +10,10 @@ body {
     user-select: none;
 }
 
+.btn.disabled, .btn:disabled {
+	opacity: 1;
+}
+
 #title h1 {
     margin: 0px 0px 10px 0px;
     padding-bottom: 10px;
@@ -56,6 +60,16 @@ body {
     }
 
     #password {
-        font-size: 1.2rem;
+        font-size: 1.25rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    html {
+        font-size: 1.25rem;
+    }
+
+    #password {
+        font-size: 1.5rem;
     }
 }
