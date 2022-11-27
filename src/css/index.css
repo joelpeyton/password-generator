@@ -1,3 +1,4 @@
+/* General */ 
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -9,16 +10,22 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* App component */
-h3 {
-    text-align: center;
-    color: #7c7989;
-}
-
 .container {
     width: 90%;
     background-color: #24232b;
     color: #b5b3bc;
+}
+
+/* Header component */
+.btn-joel {
+    display:block;
+    margin-left: auto;
+    margin-right: 2rem;
+}
+
+h3 {
+    text-align: center;
+    color: #7c7989;
 }
 
 /* Display component */
