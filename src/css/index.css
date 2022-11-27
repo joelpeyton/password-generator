@@ -9,6 +9,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* App component */
 h3 {
     text-align: center;
     color: #7c7989;
@@ -20,22 +21,19 @@ h3 {
     color: #b5b3bc;
 }
 
-.strength {
-    width: 90%;
-    background-color: #18171f;
-    color: #7c7989;
-}
-
 /* Display component */
 .display {
     font-family: monospace;
     font-weight: 800;
+    font-size: 1.25rem;
 }
 
 i {
     float: right;
     color: orangered;
 }
+
+/* Controller component */
 
 /* Character length */
 .char-length {
@@ -102,5 +100,30 @@ i {
     border-color: #18171f;
 }
 
+/* Strength bar */
+
+.strength {
+    background-color: #18171f;
+    color: #7c7989;
+}
+
+.strength span {
+    float: right;
+}
+
+/* Generate button */
+
+.btn-generate {
+    width: 100%;
+    color: #b5b3bc;
+    font-variant: small-caps;
+    background-color: orangered;
+    border-color: #18171f;
+    border-radius: 0;
+}
+
+.btn-generate:hover {
+    background-color: rgba(255, 69, 0, .4);
+}
 
 

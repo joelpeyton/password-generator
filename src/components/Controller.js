@@ -41,12 +41,12 @@ function Controller() {
 
             {/* Strength Bar */}
             <div className="strength p-3 mt-3 mb-3">
-                <div>STRENGTH BAR </div>
+                <div>Password Strength<span>WEAK</span></div>
             </div>
 
             {/* Generate Button */}
-            <button type="button" className="btn btn-primary">
-                Generate
+            <button type="button" className="btn btn-generate">
+                generate
             </button>
         </div>
     );
