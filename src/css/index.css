@@ -38,6 +38,7 @@ i {
 /* Character length */
 .char-length {
     float: right;
+    margin-top: -0.5rem; /* centralise with text */
     font-size: 1.5rem;
     color: orangered;
 }

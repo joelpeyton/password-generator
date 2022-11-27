@@ -3,7 +3,7 @@ function Controller() {
         <div className="container p-3 mt-3">
 
             {/* Character Length */}
-            <div className="mt-3 mb-3">Character Length<span className="char-length">10</span></div>
+            <div className="mt-3 mb-4">Character Length<span className="char-length">10</span></div>
             
             {/* Slider */}
             <div className="mt-3 mb-3">
