@@ -1,14 +1,21 @@
-function Controller() {
+function Controller({ charLength, handleChange }) {
     return (    
         <div className="container p-3 mt-3">
 
             {/* Character Length */}
-            <div className="mt-3 mb-4">Character Length<span className="char-length">10</span></div>
+            <div className="mt-3 mb-4">Character Length<span className="char-length">{charLength}</span></div>
             
             {/* Slider */}
             <div className="mt-3 mb-3">
                 <label htmlFor="rangeSlider" className="form-label"></label>
-                <input type="range" id="rangeSlider" className="form-range" min="1" max="48" />
+                <input 
+                    type="range" 
+                    id="rangeSlider" 
+                    className="form-range" 
+                    min="8" max="48" 
+                    value={charLength}
+                    onChange={handleChange}
+                />
             </div>
 
             {/* Checkboxes */}
