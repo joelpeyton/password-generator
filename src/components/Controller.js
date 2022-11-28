@@ -1,4 +1,12 @@
-function Controller({ charLength, handleChange }) {
+function Controller({ 
+    charLength, 
+    handleSliderChange,
+    includeUpper,
+    includeLower,
+    includeNumbers,
+    includeSymbols,
+    handleCheckBoxChange 
+}) {
     return (    
         <div className="container p-3 mt-3">
 
@@ -14,32 +22,56 @@ function Controller({ charLength, handleChange }) {
                     className="form-range" 
                     min="8" max="48" 
                     value={charLength}
-                    onChange={handleChange}
+                    onChange={handleSliderChange}
                 />
             </div>
 
             {/* Checkboxes */}
             <div id="checkboxes" className="mt-3 mb-3">
                 <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="" id="uppercase" />
-                    <label className="form-check-label ps-3" htmlFor="uppercase">
+                    <input 
+                        className="form-check-input" 
+                        type="checkbox" 
+                        id="upper" 
+                        checked={includeUpper} 
+                        onChange={handleCheckBoxChange}
+                    />
+                    <label className="form-check-label ps-3" htmlFor="upper">
                         Include Uppercase Letters
                     </label>
                 </div>
                 <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="" id="lowercase" />
-                    <label className="form-check-label ps-3" htmlFor="lowercase">
+                    <input 
+                        className="form-check-input" 
+                        type="checkbox"  
+                        id="lower"
+                        checked={includeLower} 
+                        onChange={handleCheckBoxChange}
+                    />
+                    <label className="form-check-label ps-3" htmlFor="lower">
                         Include Lowercase Letters
                     </label>
                 </div>
                 <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="" id="numbers" />
+                    <input 
+                        className="form-check-input" 
+                        type="checkbox" 
+                        id="numbers" 
+                        checked={includeNumbers} 
+                        onChange={handleCheckBoxChange}
+                    />
                     <label className="form-check-label ps-3" htmlFor="numbers">
                         Include Numbers
                     </label>
                 </div>
                 <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="" id="symbols" />
+                    <input 
+                        className="form-check-input" 
+                        type="checkbox" 
+                        id="symbols" 
+                        checked={includeSymbols} 
+                        onChange={handleCheckBoxChange}
+                    />
                     <label className="form-check-label ps-3" htmlFor="symbols">
                         Include Symbols
                     </label>
