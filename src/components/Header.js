@@ -1,9 +1,9 @@
 function Header() {
     return (
         <>
-            <button type="button" className="btn btn-joel">
+            <a href="https://joelpeyton.github.io/Portfolio/" className="btn btn-joel">
                 <i className="bi bi-github"></i>
-            </button> 
+            </a> 
             <h3 className="m-5">Password Generator</h3>
         </>
     );

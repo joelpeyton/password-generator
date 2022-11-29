@@ -17,7 +17,7 @@ function Display({ password }) {
             <div className="container p-3">
                 <div className="display">
                     {password}
-                    <i class="bi bi-clipboard" onClick={handleCopyClick}></i>
+                    <i className="bi bi-clipboard" onClick={handleCopyClick}></i>
                 </div>
             </div>
 
