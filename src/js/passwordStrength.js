@@ -12,7 +12,7 @@ function calculatePermutations(includeUpper,
     return characterSetLength**passwordLength;
 }
 
-function passwordStrength(numberOfPermutations) {
+function getPasswordStrength(numberOfPermutations) {
     let strength;
     if (numberOfPermutations > 1e+24) {
         strength = 'STRONG';
@@ -27,7 +27,7 @@ function passwordStrength(numberOfPermutations) {
     return strength;
 }
 
-function passwordColor(strength) {
+function getPasswordColour(strength) {
     let color;
     if (strength === 'WEAK') {
         color = '#dc3545';
@@ -40,4 +40,4 @@ function passwordColor(strength) {
     }
     return color;
 }
-export { calculatePermutations, passwordStrength, passwordColor };
+export { calculatePermutations, getPasswordStrength, getPasswordColour };

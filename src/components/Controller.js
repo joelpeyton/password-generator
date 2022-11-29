@@ -1,5 +1,3 @@
-import { calculatePermutations, passwordStrength, passwordColor } from "../js/passwordStrength";
-
 function Controller({ 
     charLength, 
     handleSliderChange,
@@ -7,18 +5,10 @@ function Controller({
     includeLower,
     includeNumbers,
     includeSymbols,
-    handleCheckBoxChange
+    handleCheckBoxChange,
+    passwordColor,
+    passwordStrength
 }) {
-
-    let numberOfPermutations = calculatePermutations(
-        includeUpper, 
-        includeLower, 
-        includeNumbers, 
-        includeSymbols,
-        charLength
-    );
-    let pStrength = passwordStrength(numberOfPermutations); 
-    let pColor = passwordColor(pStrength);
 
     return (    
         <div className="container p-3 mt-3">
@@ -93,7 +83,9 @@ function Controller({
 
             {/* Strength Bar */}
             <div className="strength p-3 mt-3 mb-3" >
-                <div>Password Strength<span style={{color: pColor}}>{pStrength}</span></div>
+                <div>Password Strength
+                    <span style={{color: passwordColor}}>{passwordStrength}</span>
+                </div>
             </div>
 
             {/* Buttons */}

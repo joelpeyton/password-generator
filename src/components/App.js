@@ -3,6 +3,8 @@ import Display from "./Display";
 import Controller from "./Controller";
 import { useState } from "react";
 import generatePassword from "../js/generatePassword";
+import { calculatePermutations, getPasswordStrength, getPasswordColour } from "../js/passwordStrength";
+
 
 function App() {
     const [charLength, setCharLength] = useState(16);
@@ -19,6 +21,21 @@ function App() {
             includeSymbols
         )
     );
+    const [numberOfPerms, setNumberOfPerms] = useState(
+        calculatePermutations(
+            includeUpper, 
+            includeLower, 
+            includeNumbers, 
+            includeSymbols,
+            charLength
+        )
+    );
+    const [passwordStrength, setPasswordStrength] = useState(
+        getPasswordStrength(numberOfPerms)
+    );
+    const [passwordColour, setPasswordColour] = useState(
+        getPasswordColour(passwordStrength)
+    );
 
     function handleSliderChange(e) {
         setCharLength(parseInt(e.target.value));
@@ -31,6 +48,17 @@ function App() {
                 includeSymbols
             )
         );
+        setNumberOfPerms(
+            calculatePermutations(
+                includeUpper, 
+                includeLower, 
+                includeNumbers, 
+                includeSymbols,
+                charLength
+            )
+        );
+        setPasswordStrength(getPasswordStrength(numberOfPerms));
+        setPasswordColour(getPasswordColour(passwordStrength));
     }
 
     function handleCheckBoxChange(e) {        
@@ -64,6 +92,8 @@ function App() {
                 includeNumbers={includeNumbers}
                 includeSymbols={includeSymbols}
                 handleCheckBoxChange={handleCheckBoxChange}
+                passwordColor={passwordColour}
+                passwordStrength={passwordStrength}
             />
         </>
     );
