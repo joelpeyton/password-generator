@@ -10,21 +10,21 @@ function App() {
     const [includeNumbers, setIncludeNumbers] = useState(true);
     const [includeSymbols, setIncludeSymbols] = useState(true);
 
-    function handleCheckBoxChange(e) {
+    function handleCheckBoxChange(e) {        
         let checkbox = e.target.id;
 
         if (checkbox === 'upper') {
-            includeUpper ? setIncludeUpper(false) : setIncludeUpper(true);
+            setIncludeUpper(!includeUpper);
         }
         if (checkbox === 'lower') {
-            includeLower ? setIncludeLower(false) : setIncludeLower(true);
+            setIncludeLower(!includeLower);
         }
         if (checkbox === 'numbers') {
-            includeNumbers ? setIncludeNumbers(false) : setIncludeNumbers(true);
+            setIncludeNumbers(!includeNumbers);
         }
         if (checkbox === 'symbols') {
-            includeSymbols ? setIncludeSymbols(false) : setIncludeSymbols(true);
-        }       
+            setIncludeSymbols(!includeSymbols);
+        }          
     }
     
     return (
@@ -39,7 +39,7 @@ function App() {
             />
             <Controller 
                 charLength={charLength} 
-                handleSliderChange={(e) => setCharLength(e.target.value)}
+                handleSliderChange={(e) => setCharLength(parseInt(e.target.value))}
                 includeUpper={includeUpper}
                 includeLower={includeLower}
                 includeNumbers={includeNumbers}
