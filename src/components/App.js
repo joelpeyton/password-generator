@@ -2,6 +2,7 @@ import Header from "./Header";
 import Display from "./Display";
 import Controller from "./Controller";
 import { useState } from "react";
+import generatePassword from "../js/generatePassword";
 
 function App() {
     const [charLength, setCharLength] = useState(16);
@@ -9,6 +10,28 @@ function App() {
     const [includeLower, setIncludeLower] = useState(true);
     const [includeNumbers, setIncludeNumbers] = useState(true);
     const [includeSymbols, setIncludeSymbols] = useState(true);
+    const [password, setPassword] = useState(
+        generatePassword(
+            charLength, 
+            includeUpper, 
+            includeLower, 
+            includeNumbers, 
+            includeSymbols
+        )
+    );
+
+    function handleSliderChange(e) {
+        setCharLength(parseInt(e.target.value));
+        setPassword(
+            generatePassword(
+                charLength, 
+                includeUpper, 
+                includeLower, 
+                includeNumbers, 
+                includeSymbols
+            )
+        );
+    }
 
     function handleCheckBoxChange(e) {        
         let checkbox = e.target.id;
@@ -31,15 +54,11 @@ function App() {
         <>
             <Header />
             <Display 
-                charLength={charLength} 
-                includeUpper={includeUpper}
-                includeLower={includeLower}
-                includeNumbers={includeNumbers}
-                includeSymbols={includeSymbols}
+                password={password}
             />
             <Controller 
                 charLength={charLength} 
-                handleSliderChange={(e) => setCharLength(parseInt(e.target.value))}
+                handleSliderChange={handleSliderChange}
                 includeUpper={includeUpper}
                 includeLower={includeLower}
                 includeNumbers={includeNumbers}
