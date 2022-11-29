@@ -109,7 +109,6 @@ i {
 }
 
 /* Strength bar */
-
 .strength {
     background-color: #18171f;
     color: #7c7989;
@@ -120,18 +119,37 @@ i {
 }
 
 /* Generate button */
-
 .btn-generate {
     width: 100%;
     color: #b5b3bc;
     font-variant: small-caps;
     background-color: orangered;
-    border-color: #18171f;
+    border-color: rgb(24, 23, 31);
     border-radius: 0;
 }
 
 .btn-generate:hover {
     background-color: rgba(255, 69, 0, .4);
+}
+
+/* Copied modal */
+.copied {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(24, 23, 31, .8);
+    color: #b5b3bc;
+}
+
+.copied p {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    font-size: 4rem;
 }
 
 

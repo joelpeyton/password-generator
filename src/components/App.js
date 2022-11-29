@@ -5,7 +5,6 @@ import { useState } from "react";
 import generatePassword from "../js/generatePassword";
 import { calculatePermutations, getPasswordStrength, getPasswordColour } from "../js/passwordStrength";
 
-
 function App() {
     const [charLength, setCharLength] = useState(16);
     const [includeUpper, setIncludeUpper] = useState(true);

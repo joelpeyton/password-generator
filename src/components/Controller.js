@@ -15,7 +15,11 @@ function Controller({
         <div className="container p-3 mt-3">
 
             {/* Character Length */}
-            <div className="mt-3 mb-4">Character Length<span className="char-length">{charLength}</span></div>
+            <div className="mt-3 mb-4">Character Length
+                <span className="char-length">
+                    {charLength}
+                </span>
+            </div>
             
             {/* Slider */}
             <div className="mt-3 mb-3">
