@@ -7,7 +7,8 @@ function Controller({
     includeSymbols,
     handleCheckBoxChange,
     passwordColor,
-    passwordStrength
+    passwordStrength,
+    handleGenerateClick
 }) {
 
     return (    
@@ -89,11 +90,8 @@ function Controller({
             </div>
 
             {/* Buttons */}
-            <button type="button" className="btn btn-buttons">
-                <i class="bi bi-arrow-clockwise"></i>
-            </button>
-            <button type="button" className="btn btn-buttons">
-                <i className="bi bi-clipboard"></i>
+            <button type="button" className="btn btn-generate" onClick={handleGenerateClick}>
+                generate
             </button>
         </div>
     );

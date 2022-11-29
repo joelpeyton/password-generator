@@ -39,6 +39,26 @@ function App() {
 
     function handleSliderChange(e) {
         setCharLength(parseInt(e.target.value));
+    }
+
+    function handleCheckBoxChange(e) {        
+        let checkbox = e.target.id;
+
+        if (checkbox === 'upper') {
+            setIncludeUpper(!includeUpper);
+        }
+        if (checkbox === 'lower') {
+            setIncludeLower(!includeLower);
+        }
+        if (checkbox === 'numbers') {
+            setIncludeNumbers(!includeNumbers);
+        }
+        if (checkbox === 'symbols') {
+            setIncludeSymbols(!includeSymbols);
+        }          
+    }
+
+    function handleGenerateClick() {
         setPassword(
             generatePassword(
                 charLength, 
@@ -60,23 +80,6 @@ function App() {
         setPasswordStrength(getPasswordStrength(numberOfPerms));
         setPasswordColour(getPasswordColour(passwordStrength));
     }
-
-    function handleCheckBoxChange(e) {        
-        let checkbox = e.target.id;
-
-        if (checkbox === 'upper') {
-            setIncludeUpper(!includeUpper);
-        }
-        if (checkbox === 'lower') {
-            setIncludeLower(!includeLower);
-        }
-        if (checkbox === 'numbers') {
-            setIncludeNumbers(!includeNumbers);
-        }
-        if (checkbox === 'symbols') {
-            setIncludeSymbols(!includeSymbols);
-        }          
-    }
     
     return (
         <>
@@ -94,6 +97,7 @@ function App() {
                 handleCheckBoxChange={handleCheckBoxChange}
                 passwordColor={passwordColour}
                 passwordStrength={passwordStrength}
+                handleGenerateClick={handleGenerateClick}
             />
         </>
     );
