@@ -1,3 +1,5 @@
+import { calculatePermutations, passwordStrength, passwordColor } from "../js/passwordStrength";
+
 function Controller({ 
     charLength, 
     handleSliderChange,
@@ -5,8 +7,19 @@ function Controller({
     includeLower,
     includeNumbers,
     includeSymbols,
-    handleCheckBoxChange 
+    handleCheckBoxChange
 }) {
+
+    let numberOfPermutations = calculatePermutations(
+        includeUpper, 
+        includeLower, 
+        includeNumbers, 
+        includeSymbols,
+        charLength
+    );
+    let pStrength = passwordStrength(numberOfPermutations); 
+    let pColor = passwordColor(pStrength);
+
     return (    
         <div className="container p-3 mt-3">
 
@@ -20,7 +33,7 @@ function Controller({
                     type="range" 
                     id="rangeSlider" 
                     className="form-range" 
-                    min="8" max="48" 
+                    min="4" max="24" 
                     value={charLength}
                     onChange={handleSliderChange}
                 />
@@ -79,8 +92,8 @@ function Controller({
             </div>
 
             {/* Strength Bar */}
-            <div className="strength p-3 mt-3 mb-3">
-                <div>Password Strength<span>WEAK</span></div>
+            <div className="strength p-3 mt-3 mb-3" >
+                <div>Password Strength<span style={{color: pColor}}>{pStrength}</span></div>
             </div>
 
             {/* Generate Button */}
