@@ -96,9 +96,12 @@ function Controller({
                 <div>Password Strength<span style={{color: pColor}}>{pStrength}</span></div>
             </div>
 
-            {/* Generate Button */}
-            <button type="button" className="btn btn-generate">
-                generate
+            {/* Buttons */}
+            <button type="button" className="btn btn-buttons">
+                <i class="bi bi-arrow-clockwise"></i>
+            </button>
+            <button type="button" className="btn btn-buttons">
+                <i className="bi bi-clipboard"></i>
             </button>
         </div>
     );

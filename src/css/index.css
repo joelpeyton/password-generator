@@ -35,11 +35,6 @@ h3 {
     font-size: 1.25rem;
 }
 
-i {
-    float: right;
-    color: orangered;
-}
-
 /* Controller component */
 
 /* Character length */
@@ -119,10 +114,10 @@ i {
     float: right;
 }
 
-/* Generate button */
+/* Refresh & copy buttons */
 
-.btn-generate {
-    width: 100%;
+.btn-buttons {
+    width: 50%;
     color: #b5b3bc;
     font-variant: small-caps;
     background-color: orangered;
@@ -130,7 +125,7 @@ i {
     border-radius: 0;
 }
 
-.btn-generate:hover {
+.btn-buttons:hover {
     background-color: rgba(255, 69, 0, .4);
 }
 
