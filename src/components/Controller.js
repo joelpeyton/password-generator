@@ -1,3 +1,5 @@
+import Checkbox from "./Checkbox";
+
 function Controller({ 
     charLength, 
     handleSliderChange,
@@ -36,54 +38,10 @@ function Controller({
 
             {/* Checkboxes */}
             <div id="checkboxes" className="mt-3 mb-3">
-                <div className="form-check">
-                    <input 
-                        className="form-check-input" 
-                        type="checkbox" 
-                        id="upper" 
-                        checked={includeUpper} 
-                        onChange={handleCheckBoxChange}
-                    />
-                    <label className="form-check-label ps-3" htmlFor="upper">
-                        Include Uppercase Letters
-                    </label>
-                </div>
-                <div className="form-check">
-                    <input 
-                        className="form-check-input" 
-                        type="checkbox"  
-                        id="lower"
-                        checked={includeLower} 
-                        onChange={handleCheckBoxChange}
-                    />
-                    <label className="form-check-label ps-3" htmlFor="lower">
-                        Include Lowercase Letters
-                    </label>
-                </div>
-                <div className="form-check">
-                    <input 
-                        className="form-check-input" 
-                        type="checkbox" 
-                        id="numbers" 
-                        checked={includeNumbers} 
-                        onChange={handleCheckBoxChange}
-                    />
-                    <label className="form-check-label ps-3" htmlFor="numbers">
-                        Include Numbers
-                    </label>
-                </div>
-                <div className="form-check">
-                    <input 
-                        className="form-check-input" 
-                        type="checkbox" 
-                        id="symbols" 
-                        checked={includeSymbols} 
-                        onChange={handleCheckBoxChange}
-                    />
-                    <label className="form-check-label ps-3" htmlFor="symbols">
-                        Include Symbols
-                    </label>
-                </div>
+                <Checkbox id={'upper'} labelText={'UpperCase Letters'} isChecked={includeUpper} handleCheckBoxChange={handleCheckBoxChange} />
+                <Checkbox id={'lower'} labelText={'LowerCase Letters'} isChecked={includeLower} handleCheckBoxChange={handleCheckBoxChange} />
+                <Checkbox id={'numbers'} labelText={'Numbers'} isChecked={includeNumbers} handleCheckBoxChange={handleCheckBoxChange} />
+                <Checkbox id={'symbols'} labelText={'Symbols'} isChecked={includeSymbols} handleCheckBoxChange={handleCheckBoxChange} />
             </div>
 
             {/* Strength Bar */}
