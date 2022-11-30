@@ -1,4 +1,5 @@
 import Checkbox from "./Checkbox";
+import { calculatePermutations, getPasswordStrength, getPasswordColour } from "../js/passwordStrength";
 
 function Controller({ 
     charLength, 
@@ -7,11 +8,12 @@ function Controller({
     includeLower,
     includeNumbers,
     includeSymbols,
-    handleCheckBoxChange,
-    passwordColor,
-    passwordStrength,
-    handleGenerateClick
+    handleCheckBoxChange
 }) {
+
+    let numberOfPerms = calculatePermutations(charLength, includeUpper, includeLower, includeNumbers, includeSymbols);
+    let passwordStrength = getPasswordStrength(numberOfPerms);
+    let passwordColour = getPasswordColour(passwordStrength);
 
     return (    
         <div className="container p-3 mt-3">
@@ -47,14 +49,9 @@ function Controller({
             {/* Strength Bar */}
             <div className="strength p-3 mt-3 mb-3" >
                 <div>Password Strength
-                    <span style={{color: passwordColor}}>{passwordStrength}</span>
+                    <span style={{color: passwordColour}}>{passwordStrength}</span>
                 </div>
             </div>
-
-            {/* Buttons */}
-            <button type="button" className="btn btn-generate" onClick={handleGenerateClick}>
-                generate
-            </button>
         </div>
     );
 }

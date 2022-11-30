@@ -1,8 +1,8 @@
-function calculatePermutations(includeUpper,
+function calculatePermutations(passwordLength,
+    includeUpper,
     includeLower,
     includeNumbers,
-    includeSymbols, 
-    passwordLength
+    includeSymbols
 ) {
     let characterSetLength = 0;
     characterSetLength += includeUpper ? 26 : 0;

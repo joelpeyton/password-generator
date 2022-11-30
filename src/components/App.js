@@ -3,7 +3,7 @@ import Display from "./Display";
 import Controller from "./Controller";
 import { useState } from "react";
 import generatePassword from "../js/generatePassword";
-import { calculatePermutations, getPasswordStrength, getPasswordColour } from "../js/passwordStrength";
+
 
 function App() {
     const [charLength, setCharLength] = useState(16);
@@ -11,30 +11,7 @@ function App() {
     const [includeLower, setIncludeLower] = useState(true);
     const [includeNumbers, setIncludeNumbers] = useState(true);
     const [includeSymbols, setIncludeSymbols] = useState(true);
-    const [password, setPassword] = useState(
-        generatePassword(
-            charLength, 
-            includeUpper, 
-            includeLower, 
-            includeNumbers, 
-            includeSymbols
-        )
-    );
-    const [numberOfPerms, setNumberOfPerms] = useState(
-        calculatePermutations(
-            includeUpper, 
-            includeLower, 
-            includeNumbers, 
-            includeSymbols,
-            charLength
-        )
-    );
-    const [passwordStrength, setPasswordStrength] = useState(
-        getPasswordStrength(numberOfPerms)
-    );
-    const [passwordColour, setPasswordColour] = useState(
-        getPasswordColour(passwordStrength)
-    );
+    let password = generatePassword(charLength, includeUpper, includeLower, includeNumbers, includeSymbols);
 
     function handleSliderChange(e) {
         setCharLength(parseInt(e.target.value));
@@ -56,29 +33,6 @@ function App() {
             setIncludeSymbols(!includeSymbols);
         }          
     }
-
-    function handleGenerateClick() {
-        setPassword(
-            generatePassword(
-                charLength, 
-                includeUpper, 
-                includeLower, 
-                includeNumbers, 
-                includeSymbols
-            )
-        );
-        setNumberOfPerms(
-            calculatePermutations(
-                includeUpper, 
-                includeLower, 
-                includeNumbers, 
-                includeSymbols,
-                charLength
-            )
-        );
-        setPasswordStrength(getPasswordStrength(numberOfPerms));
-        setPasswordColour(getPasswordColour(passwordStrength));
-    }
     
     return (
         <>
@@ -94,9 +48,6 @@ function App() {
                 includeNumbers={includeNumbers}
                 includeSymbols={includeSymbols}
                 handleCheckBoxChange={handleCheckBoxChange}
-                passwordColor={passwordColour}
-                passwordStrength={passwordStrength}
-                handleGenerateClick={handleGenerateClick}
             />
         </>
     );
