@@ -16,13 +16,12 @@ body {
     color: #b5b3bc;
 }
 
-/* Header component */
-.btn-joel {
-    display:block;
-    margin-left: auto;
-    margin-right: 2rem;
+i {
+    float: right;
+    color: orangered !important;
 }
 
+/* Header component */
 h3 {
     text-align: center;
     color: #7c7989;
@@ -35,13 +34,7 @@ h3 {
     font-size: 1.25rem;
 }
 
-i {
-    float: right;
-    color: orangered;
-}
-
 /* Controller component */
-
 /* Character length */
 .char-length {
     float: right;
@@ -152,4 +145,19 @@ i {
     font-size: 4rem;
 }
 
+/* RWD */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 374px) {
+    .display {
+        font-size: 1rem;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .container {
+        width: 50%;
+    }
+} 
 

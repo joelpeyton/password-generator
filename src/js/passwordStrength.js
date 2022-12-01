@@ -18,7 +18,7 @@ function getPasswordStrength(numberOfPermutations) {
         strength = 'STRONG';
     }
     else if (numberOfPermutations > 1e+14) {
-        strength = 'MEDIUM';
+        strength = 'GOOD';
     }
     else {
         strength = 'WEAK';
@@ -32,8 +32,8 @@ function getPasswordColour(strength) {
     if (strength === 'WEAK') {
         color = '#dc3545';
     }
-    else if (strength === 'MEDIUM') {
-        color = 'orangered';
+    else if (strength === 'GOOD') {
+        color = '#ffc107';
     }
     else {
         color = '#198754';

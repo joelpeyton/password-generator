@@ -5,7 +5,7 @@ import { useState } from "react";
 import generatePassword from "../js/generatePassword";
 
 function App() {
-    const [charLength, setCharLength] = useState(16);
+    const [charLength, setCharLength] = useState(14);
     const [includeUpper, setIncludeUpper] = useState(true);
     const [includeLower, setIncludeLower] = useState(true);
     const [includeNumbers, setIncludeNumbers] = useState(true);
