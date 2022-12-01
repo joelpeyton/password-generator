@@ -4,7 +4,6 @@ import Controller from "./Controller";
 import { useState } from "react";
 import generatePassword from "../js/generatePassword";
 
-
 function App() {
     const [charLength, setCharLength] = useState(16);
     const [includeUpper, setIncludeUpper] = useState(true);
@@ -31,8 +30,12 @@ function App() {
         }
         if (checkbox === 'symbols') {
             setIncludeSymbols(!includeSymbols);
-        }          
+        }    
+        
+        
     }
+    
+    if (!includeUpper && !includeLower && !includeNumbers && !includeSymbols) {setIncludeLower(true)}
     
     return (
         <>
